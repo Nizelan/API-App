@@ -99,12 +99,10 @@
 		99FF42BD24780BDB0055A682 /* API App */ = {
 			isa = PBXGroup;
 			children = (
-				99FF42BE24780BDB0055A682 /* AppDelegate.swift */,
-				99FF42C024780BDB0055A682 /* SceneDelegate.swift */,
-				99FF42C224780BDB0055A682 /* ViewController.swift */,
-				99FF42C424780BDB0055A682 /* Main.storyboard */,
-				99FF42C724780BDC0055A682 /* Assets.xcassets */,
-				99FF42C924780BDC0055A682 /* LaunchScreen.storyboard */,
+				99FF42F024780BF40055A682 /* Model */,
+				99FF42EF24780BF10055A682 /* View */,
+				99FF42EE24780BEF0055A682 /* Controller */,
+				99FF42F124780C160055A682 /* Support */,
 				99FF42CC24780BDC0055A682 /* Info.plist */,
 			);
 			path = "API App";
@@ -126,6 +124,40 @@
 				99FF42E224780BDC0055A682 /* Info.plist */,
 			);
 			path = "API AppUITests";
+			sourceTree = "<group>";
+		};
+		99FF42EE24780BEF0055A682 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				99FF42C224780BDB0055A682 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		99FF42EF24780BF10055A682 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99FF42C924780BDC0055A682 /* LaunchScreen.storyboard */,
+				99FF42C424780BDB0055A682 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99FF42F024780BF40055A682 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99FF42F124780C160055A682 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				99FF42C724780BDC0055A682 /* Assets.xcassets */,
+				99FF42C024780BDB0055A682 /* SceneDelegate.swift */,
+				99FF42BE24780BDB0055A682 /* AppDelegate.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
