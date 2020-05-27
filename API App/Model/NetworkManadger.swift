@@ -11,14 +11,24 @@ import Foundation
 struct NetworkManadger {
     func apiManadger() {
         let urlString = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5"
-        let url = URL(string: urlString)
+        guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: url!) { data, response, error in
+        let task = session.dataTask(with: url) { data, response, error in
             if let data = data {
-                let dataString = String(data: data, encoding: .utf8)
-                print(dataString!)
+                self.parseJSON(withData: data)
             }
         }
         task.resume()
+    }
+    
+    func parseJSON(withData data: Data) {
+        let decoder = JSONDecoder()
+        do {
+            let curencyData = try decoder.decode([CurrencyData].self, from: data)
+            print(curencyData)
+        } catch let error as NSError{
+            print(error.localizedDescription)
+        }
+        
     }
 }

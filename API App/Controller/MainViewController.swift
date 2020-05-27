@@ -10,13 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let networkManadger = NetworkManadger()
+    @IBOutlet weak var USDLabel: UILabel!
+    @IBOutlet weak var EURLavel: UILabel!
+    @IBOutlet weak var RUBLabel: UILabel!
+    @IBOutlet weak var BTCLabel: UILabel!
     
+    @IBAction func updateButton(_ sender: UIButton) {
+        networkManadger.apiManadger()
+    }
+    
+    let networkManadger = NetworkManadger()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        networkManadger.apiManadger()
+        
     }
 
 

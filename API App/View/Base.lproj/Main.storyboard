@@ -109,6 +109,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="arrow.2.circlepath.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="updateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2T1-nl-OUe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -139,6 +142,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="BTCLabel" destination="StM-No-rBj" id="YD4-Nd-opX"/>
+                        <outlet property="EURLavel" destination="HZg-Fq-nUZ" id="2vK-J0-cO4"/>
+                        <outlet property="RUBLabel" destination="7iU-Yn-R5F" id="tiQ-jn-tRh"/>
+                        <outlet property="USDLabel" destination="OL7-WB-xBS" id="QMe-fv-8tA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
