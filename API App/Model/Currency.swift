@@ -8,16 +8,9 @@
 
 import Foundation
 
-struct Currency {
+struct Currency: Codable {
     let ccy: String
     let base_ccy: String
     let buy: String
     let sale: String
-    
-    init?(currencyData: [CurrencyData]) {
-        ccy = currencyData[0].ccy
-        base_ccy = currencyData[0].base_ccy
-        buy = currencyData[0].buy
-        sale = currencyData[0].sale
-    }
 }

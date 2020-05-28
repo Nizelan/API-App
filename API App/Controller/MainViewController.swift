@@ -10,13 +10,17 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-    let networkManadger = NetworkManadger()
+    let networkManager = NetworkManadger()
+    var arrayOfCurrency = [Currency]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        networkManadger.apiManadger()
-
+        networkManager.fetchCurrency { (currencyArray: [Currency]) in
+            print(currencyArray)
+            self.arrayOfCurrency = currencyArray
+            self.tableView.reloadData()
+        }
     }
 
 
@@ -26,12 +30,13 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        print(arrayOfCurrency.count)
+        return arrayOfCurrency.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Cell"
+        cell.textLabel?.text = arrayOfCurrency[indexPath.row].ccy
 
         return cell
     }
