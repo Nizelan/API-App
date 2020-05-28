@@ -15,20 +15,24 @@ struct NetworkManadger {
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in
             if let data = data {
-                self.parseJSON(withData: data)
+                let currency = self.parseJSON(withData: data)
+                print(currency)
             }
         }
         task.resume()
     }
     
-    func parseJSON(withData data: Data) {
+    func parseJSON(withData data: Data) -> Currency? {
         let decoder = JSONDecoder()
         do {
             let curencyData = try decoder.decode([CurrencyData].self, from: data)
-            print(curencyData)
+            guard let currency = Currency(currencyData: curencyData) else {
+                return nil
+            }
+            return currency
         } catch let error as NSError{
             print(error.localizedDescription)
         }
-        
+        return nil
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		990C6437247FC4D200E50798 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990C6436247FC4D200E50798 /* MainViewController.swift */; };
+		996D0A8A24802CBE0062C400 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D0A8924802CBE0062C400 /* Currency.swift */; };
 		99737A5B247E8A0000D2B26D /* CurrencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99737A5A247E8A0000D2B26D /* CurrencyData.swift */; };
 		99A43196247D1C9B00ABC60D /* NetworkManadger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A43195247D1C9B00ABC60D /* NetworkManadger.swift */; };
 		99FF42BF24780BDB0055A682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF42BE24780BDB0055A682 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		990C6436247FC4D200E50798 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		996D0A8924802CBE0062C400 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		99737A5A247E8A0000D2B26D /* CurrencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyData.swift; sourceTree = "<group>"; };
 		99A43195247D1C9B00ABC60D /* NetworkManadger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManadger.swift; sourceTree = "<group>"; };
 		99FF42BB24780BDB0055A682 /* API App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				99A43195247D1C9B00ABC60D /* NetworkManadger.swift */,
+				996D0A8924802CBE0062C400 /* Currency.swift */,
 				99737A5A247E8A0000D2B26D /* CurrencyData.swift */,
 			);
 			path = Model;
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				996D0A8A24802CBE0062C400 /* Currency.swift in Sources */,
 				99737A5B247E8A0000D2B26D /* CurrencyData.swift in Sources */,
 				99A43196247D1C9B00ABC60D /* NetworkManadger.swift in Sources */,
 				99FF42BF24780BDB0055A682 /* AppDelegate.swift in Sources */,
