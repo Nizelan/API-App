@@ -15,6 +15,7 @@ class MainViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 137
         
         networkManager.fetchCurrency { (currencyArray: [Currency]) in
             print(currencyArray)
@@ -34,8 +35,6 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        
-        tableView.rowHeight = 137
         
         cell.ccyLabel?.text = arrayOfCurrency[indexPath.row].ccy
         cell.baseCCYLabel?.text = arrayOfCurrency[indexPath.row].base_ccy
