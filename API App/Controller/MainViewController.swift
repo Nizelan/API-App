@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UITableViewController {
-
+       
     let networkManager = NetworkManadger()
     var arrayOfCurrency = [Currency]()
     
@@ -23,8 +23,6 @@ class MainViewController: UITableViewController {
         }
     }
 
-
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -35,9 +33,15 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = arrayOfCurrency[indexPath.row].ccy
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        
+        tableView.rowHeight = 137
+        
+        cell.ccyLabel?.text = arrayOfCurrency[indexPath.row].ccy
+        cell.baseCCYLabel?.text = arrayOfCurrency[indexPath.row].base_ccy
+        cell.buyLabel?.text = "buy \(arrayOfCurrency[indexPath.row].buy)"
+        cell.saleLabel?.text = "sale \(arrayOfCurrency[indexPath.row].sale)"
+        
         return cell
     }
     

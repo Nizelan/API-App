@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		990C6437247FC4D200E50798 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990C6436247FC4D200E50798 /* MainViewController.swift */; };
+		99134A8D248126D0001FF64F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99134A8C248126D0001FF64F /* CustomTableViewCell.swift */; };
 		996D0A8A24802CBE0062C400 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D0A8924802CBE0062C400 /* Currency.swift */; };
 		99A43196247D1C9B00ABC60D /* NetworkManadger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A43195247D1C9B00ABC60D /* NetworkManadger.swift */; };
 		99FF42BF24780BDB0055A682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF42BE24780BDB0055A682 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		990C6436247FC4D200E50798 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		99134A8C248126D0001FF64F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		996D0A8924802CBE0062C400 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		99A43195247D1C9B00ABC60D /* NetworkManadger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManadger.swift; sourceTree = "<group>"; };
 		99FF42BB24780BDB0055A682 /* API App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				990C6436247FC4D200E50798 /* MainViewController.swift */,
+				99134A8C248126D0001FF64F /* CustomTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99134A8D248126D0001FF64F /* CustomTableViewCell.swift in Sources */,
 				996D0A8A24802CBE0062C400 /* Currency.swift in Sources */,
 				99A43196247D1C9B00ABC60D /* NetworkManadger.swift in Sources */,
 				99FF42BF24780BDB0055A682 /* AppDelegate.swift in Sources */,
