@@ -24,12 +24,38 @@ struct NetworkManadger {
         }
         task.resume()
     }
-    
     func parseJSON(withData data: Data) -> [Currency]? {
         let decoder = JSONDecoder()
         do {
             let curencyData = try decoder.decode([Currency].self, from: data)
             return curencyData
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        return nil
+    }
+    
+    func fetchAdress(closure: @escaping ([Address]) -> ()) {
+        let urlString = "https://api.privatbank.ua/p24api/pboffice?json&city=&address="
+        guard let url = URL(string: urlString) else { return }
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: url) { data, response, error in
+            if let data = data {
+                if let address = self.parseAddressJSON(withData: data) {
+                    DispatchQueue.main.async {
+                        closure(address)
+                        print(address)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+    func parseAddressJSON(withData data: Data) -> [Address]? {
+        let decoder = JSONDecoder()
+        do {
+            let addressData = try decoder.decode([Address].self, from: data)
+            return addressData
         } catch let error as NSError {
             print(error.localizedDescription)
         }

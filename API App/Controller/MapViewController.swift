@@ -12,11 +12,15 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
+    
+    @IBOutlet weak var cityNameLabel: UILabel! 
     
     @IBAction func clouseMap() {
         dismiss(animated: true)
+    }
+    
+    @IBAction func searchButton(_ sender: UIButton) {
     }
     
 
