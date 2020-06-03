@@ -142,6 +142,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="rOo-v2-ckD"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -165,7 +166,7 @@
                         <viewLayoutGuide key="safeArea" id="BMe-3w-1aR"/>
                     </view>
                     <connections>
-                        <outlet property="cityNameLabel" destination="PVd-hk-WRy" id="GuR-QN-apL"/>
+                        <outlet property="cityNameLabel" destination="PVd-hk-WRy" id="9SU-4V-Z4r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KA-Vf-pL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
