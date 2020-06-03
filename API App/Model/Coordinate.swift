@@ -8,9 +8,12 @@
 
 import Foundation
 
-struct Address: Codable {
-    let country: String
-    let state: String
+struct Coordinate: Codable {
     let city: String
-    let address: String
+    let devices: [Devices]
+}
+
+struct Devices: Codable {
+    let latitude: String
+    let longitude: String
 }

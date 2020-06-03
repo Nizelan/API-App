@@ -19,7 +19,6 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var cityNameLabel: UILabel!
     @IBAction func clouseMap() {
         dismiss(animated: true)
     }

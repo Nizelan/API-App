@@ -35,8 +35,8 @@ struct NetworkManadger {
         return nil
     }
     
-    func fetchAdress(closure: @escaping ([Address]) -> ()) {
-        let urlString = "https://api.privatbank.ua/p24api/pboffice?json&city=&address="
+    func fetchAdress(closure: @escaping ([Coordinate]) -> ()) {
+        let urlString = "https://api.privatbank.ua/p24api/infrastructure?json&atm&address=&city="
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in
@@ -51,10 +51,10 @@ struct NetworkManadger {
         }
         task.resume()
     }
-    func parseAddressJSON(withData data: Data) -> [Address]? {
+    func parseAddressJSON(withData data: Data) -> [Coordinate]? {
         let decoder = JSONDecoder()
         do {
-            let addressData = try decoder.decode([Address].self, from: data)
+            let addressData = try decoder.decode([Coordinate].self, from: data)
             return addressData
         } catch let error as NSError {
             print(error.localizedDescription)

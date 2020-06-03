@@ -15,10 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="esf-hu-INz">
-                            <rect key="frame" x="0.0" y="193" width="375" height="44"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="esf-hu-INz">
+                            <rect key="frame" x="0.0" y="193" width="375" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Map"/>
+                            <state key="normal" image="map" catalog="system"/>
                             <connections>
                                 <segue destination="O7l-qw-tmm" kind="presentation" identifier="showMap" id="HCw-7O-SmI"/>
                             </connections>
@@ -136,26 +136,13 @@
                                     <action selector="searchButton:" destination="O7l-qw-tmm" eventType="touchUpInside" id="dDa-ps-WRs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVd-hk-WRy">
-                                <rect key="frame" x="16" y="684" width="303" height="30"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="rOo-v2-ckD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BMe-3w-1aR" firstAttribute="trailing" secondItem="Ep9-1K-ClB" secondAttribute="trailing" constant="12" id="CYU-nF-9DP"/>
                             <constraint firstItem="Ep9-1K-ClB" firstAttribute="top" secondItem="BMe-3w-1aR" secondAttribute="top" constant="20" id="DYy-1A-wbV"/>
                             <constraint firstItem="BMe-3w-1aR" firstAttribute="trailing" secondItem="Ep9-1K-ClB" secondAttribute="trailing" constant="12" id="ETW-d5-mAG"/>
-                            <constraint firstItem="PVd-hk-WRy" firstAttribute="leading" secondItem="BMe-3w-1aR" secondAttribute="leading" constant="16" id="Jvd-Ww-qb9"/>
-                            <constraint firstItem="BMe-3w-1aR" firstAttribute="bottom" secondItem="PVd-hk-WRy" secondAttribute="bottom" constant="10" id="Mzb-Wh-7dI"/>
                             <constraint firstItem="NRx-Yh-2Ob" firstAttribute="bottom" secondItem="BMe-3w-1aR" secondAttribute="bottom" id="Ng1-bC-zGg"/>
-                            <constraint firstItem="NRx-Yh-2Ob" firstAttribute="leading" secondItem="PVd-hk-WRy" secondAttribute="trailing" id="UhZ-Xj-ONW"/>
                             <constraint firstItem="l2m-gQ-iKJ" firstAttribute="trailing" secondItem="BMe-3w-1aR" secondAttribute="trailing" id="Vsk-ZP-asT"/>
                             <constraint firstItem="Ep9-1K-ClB" firstAttribute="top" secondItem="BMe-3w-1aR" secondAttribute="top" constant="20" id="WrK-ln-s0D"/>
                             <constraint firstItem="l2m-gQ-iKJ" firstAttribute="top" secondItem="bEJ-tm-iFW" secondAttribute="top" id="clW-Bb-MZ4"/>
@@ -165,9 +152,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BMe-3w-1aR"/>
                     </view>
-                    <connections>
-                        <outlet property="cityNameLabel" destination="PVd-hk-WRy" id="9SU-4V-Z4r"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KA-Vf-pL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,5 +177,6 @@
     <resources>
         <image name="camcel" width="128" height="128"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="map" catalog="system" width="64" height="56"/>
     </resources>
 </document>
