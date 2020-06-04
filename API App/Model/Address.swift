@@ -1,16 +1,16 @@
 //
-//  Adress.swift
+//  Address.swift
 //  API App
 //
-//  Created by Nizelan on 02.06.2020.
+//  Created by Nizelan on 04.06.2020.
 //  Copyright © 2020 Nizelan. All rights reserved.
 //
 
 import Foundation
 
-struct Coordinate: Codable {
+struct Address: Codable {
     let city: String
-    let devices: [Devices]
+    let devices: Devices
 }
 
 struct Devices: Codable {

@@ -15,10 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="esf-hu-INz">
-                            <rect key="frame" x="0.0" y="193" width="375" height="22"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="esf-hu-INz">
+                            <rect key="frame" x="0.0" y="193" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="map" catalog="system"/>
+                            <state key="normal" title="Map"/>
                             <connections>
                                 <segue destination="O7l-qw-tmm" kind="presentation" identifier="showMap" id="HCw-7O-SmI"/>
                             </connections>
@@ -112,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="l2m-gQ-iKJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                                <rect key="frame" x="0.0" y="73" width="375" height="685"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-1K-ClB">
                                 <rect key="frame" x="323" y="20" width="40" height="40"/>
@@ -125,33 +125,31 @@
                                     <action selector="clouseMap" destination="O7l-qw-tmm" eventType="touchUpInside" id="Pty-rg-b9o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRx-Yh-2Ob">
-                                <rect key="frame" x="319" y="684" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="K1E-9p-gFl"/>
-                                    <constraint firstAttribute="width" constant="40" id="N55-B9-J6z"/>
-                                </constraints>
-                                <state key="normal" image="magnifyingglass" catalog="system"/>
-                                <connections>
-                                    <action selector="searchButton:" destination="O7l-qw-tmm" eventType="touchUpInside" id="dDa-ps-WRs"/>
-                                </connections>
-                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0G-I5-sdv">
+                                <rect key="frame" x="16" y="23" width="291" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="l2m-gQ-iKJ" firstAttribute="top" secondItem="v0G-I5-sdv" secondAttribute="bottom" constant="16" id="6JE-zH-WxG"/>
+                            <constraint firstItem="v0G-I5-sdv" firstAttribute="leading" secondItem="BMe-3w-1aR" secondAttribute="leading" constant="16" id="7UW-Tp-4y5"/>
                             <constraint firstItem="BMe-3w-1aR" firstAttribute="trailing" secondItem="Ep9-1K-ClB" secondAttribute="trailing" constant="12" id="CYU-nF-9DP"/>
                             <constraint firstItem="Ep9-1K-ClB" firstAttribute="top" secondItem="BMe-3w-1aR" secondAttribute="top" constant="20" id="DYy-1A-wbV"/>
                             <constraint firstItem="BMe-3w-1aR" firstAttribute="trailing" secondItem="Ep9-1K-ClB" secondAttribute="trailing" constant="12" id="ETW-d5-mAG"/>
-                            <constraint firstItem="NRx-Yh-2Ob" firstAttribute="bottom" secondItem="BMe-3w-1aR" secondAttribute="bottom" id="Ng1-bC-zGg"/>
+                            <constraint firstItem="Ep9-1K-ClB" firstAttribute="leading" secondItem="v0G-I5-sdv" secondAttribute="trailing" constant="16" id="QkG-Hx-kyJ"/>
+                            <constraint firstItem="v0G-I5-sdv" firstAttribute="centerY" secondItem="Ep9-1K-ClB" secondAttribute="centerY" id="TyE-oU-Oxl"/>
                             <constraint firstItem="l2m-gQ-iKJ" firstAttribute="trailing" secondItem="BMe-3w-1aR" secondAttribute="trailing" id="Vsk-ZP-asT"/>
                             <constraint firstItem="Ep9-1K-ClB" firstAttribute="top" secondItem="BMe-3w-1aR" secondAttribute="top" constant="20" id="WrK-ln-s0D"/>
-                            <constraint firstItem="l2m-gQ-iKJ" firstAttribute="top" secondItem="bEJ-tm-iFW" secondAttribute="top" id="clW-Bb-MZ4"/>
                             <constraint firstAttribute="bottom" secondItem="l2m-gQ-iKJ" secondAttribute="bottom" id="dGf-BA-rmB"/>
                             <constraint firstItem="l2m-gQ-iKJ" firstAttribute="leading" secondItem="BMe-3w-1aR" secondAttribute="leading" id="jB2-6P-nQH"/>
-                            <constraint firstItem="BMe-3w-1aR" firstAttribute="trailing" secondItem="NRx-Yh-2Ob" secondAttribute="trailing" constant="16" id="kdK-5i-OsK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BMe-3w-1aR"/>
                     </view>
+                    <connections>
+                        <outlet property="textFieldOutlet" destination="v0G-I5-sdv" id="ehQ-Pb-0yq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KA-Vf-pL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -176,7 +174,5 @@
     </scenes>
     <resources>
         <image name="camcel" width="128" height="128"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-        <image name="map" catalog="system" width="64" height="56"/>
     </resources>
 </document>

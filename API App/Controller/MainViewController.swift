@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UITableViewController {
-    
+       
     let networkManager = NetworkManadger()
     var arrayOfCurrency = [Currency]()
     
