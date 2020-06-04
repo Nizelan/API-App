@@ -10,15 +10,12 @@ import UIKit
 
 class MapViewController: UIViewController, UITextFieldDelegate {
     
-    let networkManager = NetworkManadger()
+    var networkManager = NetworkManadger()
     var arrayOfAddresses = [Address]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkManager.fetchAddress { (addressesArray: [Address]) in
-            print(addressesArray)
-            self.arrayOfAddresses = addressesArray
-        }
+        textFieldOutlet.delegate = self
     }
     
     @IBAction func clouseMap() {
@@ -26,5 +23,11 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBOutlet weak var textFieldOutlet: UITextField!
-    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        networkManager.city = textFieldOutlet.text!
+        networkManager.fetchAddress { (addressesArray: [Address]) in
+            self.arrayOfAddresses = addressesArray
+        }
+    }
 }
