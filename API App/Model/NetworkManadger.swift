@@ -29,8 +29,8 @@ struct NetworkManadger {
     }
     
     func fetchAddress(closure: @escaping ([Address]) -> ()) {
-        let urlString = "https://api.privatbank.ua/p24api/infrastructure?json&atm&address=&city=\(city)"
-        guard let url = URL(string: urlString) else { return }
+        let urlString = "https://api.privatbank.ua/p24api/infrastructure?json&atm&city=\(city)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        guard let string = urlString, let url = URL(string: string) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in
             if let data = data {
@@ -42,6 +42,7 @@ struct NetworkManadger {
                 }
             }
         }
+        task.resume()
     }
     
     func parseJSON<T>(withData data: Data) -> T? where T:Decodable {

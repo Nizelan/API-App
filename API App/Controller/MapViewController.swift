@@ -23,11 +23,17 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBOutlet weak var textFieldOutlet: UITextField!
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         networkManager.city = textFieldOutlet.text!
         networkManager.fetchAddress { (addressesArray: [Address]) in
             self.arrayOfAddresses = addressesArray
         }
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
