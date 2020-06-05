@@ -10,7 +10,7 @@ import Foundation
 
 struct Address: Codable {
     let city: String
-    let devices: Devices
+    let devices: [Devices]
 }
 
 struct Devices: Codable {

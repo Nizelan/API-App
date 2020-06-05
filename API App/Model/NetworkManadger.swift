@@ -28,16 +28,17 @@ struct NetworkManadger {
         task.resume()
     }
     
-    func fetchAddress(closure: @escaping ([Address]) -> ()) {
+    func fetchAddress(closure: @escaping (Address) -> ()) {
         let urlString = "https://api.privatbank.ua/p24api/infrastructure?json&atm&city=\(city)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         guard let string = urlString, let url = URL(string: string) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in
             if let data = data {
-                if let address: [Address] = self.parseJSON(withData: data) {
+                if let address: Address = self.parseJSON(withData: data) {
                     DispatchQueue.main.async {
                         closure(address)
-                        print(closure(address))
+                        print(address.city)
+                        print(address.devices)
                     }
                 }
             }
