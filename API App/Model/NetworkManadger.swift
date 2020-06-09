@@ -37,7 +37,6 @@ struct NetworkManadger {
                 if let address: Address = self.parseJSON(withData: data) {
                     DispatchQueue.main.async {
                         closure(address)
-                        print(address.city)
                         print(address.devices)
                     }
                 }

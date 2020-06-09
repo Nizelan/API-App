@@ -10,6 +10,7 @@
 		990C6437247FC4D200E50798 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990C6436247FC4D200E50798 /* MainViewController.swift */; };
 		99134A8D248126D0001FF64F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99134A8C248126D0001FF64F /* CustomTableViewCell.swift */; };
 		996D0A8A24802CBE0062C400 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D0A8924802CBE0062C400 /* Currency.swift */; };
+		996EA916248FB1A100DDA933 /* TryTooTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996EA915248FB1A100DDA933 /* TryTooTutorial.swift */; };
 		9976590D2489242500DC3F4A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9976590C2489242500DC3F4A /* Address.swift */; };
 		9989F65124816213004D8925 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989F65024816213004D8925 /* MapViewController.swift */; };
 		99A43196247D1C9B00ABC60D /* NetworkManadger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A43195247D1C9B00ABC60D /* NetworkManadger.swift */; };
@@ -43,6 +44,7 @@
 		990C6436247FC4D200E50798 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		99134A8C248126D0001FF64F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		996D0A8924802CBE0062C400 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		996EA915248FB1A100DDA933 /* TryTooTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryTooTutorial.swift; sourceTree = "<group>"; };
 		9976590C2489242500DC3F4A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		9989F65024816213004D8925 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		99A43195247D1C9B00ABC60D /* NetworkManadger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManadger.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				99A43195247D1C9B00ABC60D /* NetworkManadger.swift */,
 				996D0A8924802CBE0062C400 /* Currency.swift */,
 				9976590C2489242500DC3F4A /* Address.swift */,
+				996EA915248FB1A100DDA933 /* TryTooTutorial.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				99134A8D248126D0001FF64F /* CustomTableViewCell.swift in Sources */,
 				996D0A8A24802CBE0062C400 /* Currency.swift in Sources */,
+				996EA916248FB1A100DDA933 /* TryTooTutorial.swift in Sources */,
 				99A43196247D1C9B00ABC60D /* NetworkManadger.swift in Sources */,
 				99FF42BF24780BDB0055A682 /* AppDelegate.swift in Sources */,
 				990C6437247FC4D200E50798 /* MainViewController.swift in Sources */,

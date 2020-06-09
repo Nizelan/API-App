@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import MapKit
 
 struct Address: Codable {
-    let city: String
     let devices: [Devices]
 }
 
 struct Devices: Codable {
+    let type: String
+    let placeUa: String
     let latitude: String
     let longitude: String
 }
