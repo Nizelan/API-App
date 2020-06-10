@@ -13,16 +13,13 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     
     var networkManager = NetworkManadger()
     var address: Address?
+
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldOutlet.delegate = self
         
-        let bank = Tutorial(title: "ATM",
-                            placeUa: "магазин Мебель",
-                            coordinate: CLLocationCoordinate2D(latitude: 49.837019, longitude: 24.060365))
-        mapView.addAnnotation(bank)
     }
 
     
@@ -42,9 +39,17 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         networkManager.city = textFieldOutlet.text!
         networkManager.fetchAddress { (addresses: Address) in
             self.address = addresses
-            print(2)
+            
+            if let unwraptDev = self.address?.devices {
+                let longitude = Double(unwraptDev[0].latitude)
+                let latitude = Double(unwraptDev[0].longitude)
+                
+                let bank = Tutorial(title: self.address?.devices[0].type,
+                                     placeUa: self.address?.devices[0].placeUa,
+                                     coordinate: CLLocationCoordinate2D(latitude: longitude!, longitude: latitude!))
+                self.mapView.addAnnotation(bank)
+            }
         }
-        print(1)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
