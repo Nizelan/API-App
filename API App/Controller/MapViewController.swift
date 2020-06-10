@@ -13,7 +13,7 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     
     var networkManager = NetworkManadger()
     var address: Address?
-
+    
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -28,26 +28,21 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBOutlet weak var textFieldOutlet: UITextField!
-    
-    
-    
-    func showLocation() {
-    }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         networkManager.city = textFieldOutlet.text!
         networkManager.fetchAddress { (addresses: Address) in
             self.address = addresses
             
-            if let unwraptDev = self.address?.devices {
-                let longitude = Double(unwraptDev[0].latitude)
-                let latitude = Double(unwraptDev[0].longitude)
-                
-                let bank = Tutorial(title: self.address?.devices[0].type,
-                                     placeUa: self.address?.devices[0].placeUa,
-                                     coordinate: CLLocationCoordinate2D(latitude: longitude!, longitude: latitude!))
-                self.mapView.addAnnotation(bank)
+            if let address = self.address {
+                for i in 0..<address.devices.count {
+                    let bank = Tutorial(title: address.devices[i].type,
+                                         placeUa: address.devices[i].placeUa,
+                                         coordinate: CLLocationCoordinate2D(latitude: Double(address.devices[i].longitude)!,
+                                                                            longitude: Double(address.devices[i].latitude)!))
+                    self.mapView.addAnnotation(bank)
+                }
             }
         }
     }
