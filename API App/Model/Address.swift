@@ -18,4 +18,5 @@ struct Devices: Codable {
     let placeUa: String
     let latitude: String
     let longitude: String
+    let tw: [String: String]
 }

@@ -32,6 +32,11 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldOutlet: UITextField!
 
     func textFieldDidEndEditing(_ textField: UITextField) {
+        let date = Date()
+        let hour = DateFormatter()
+        hour.dateFormat = "HH:mm"
+        let day = DateFormatter()
+        day.dateFormat = "E"
         
         networkManager.city = textFieldOutlet.text!
         networkManager.fetchAddress { (addresses: Address) in
@@ -44,6 +49,11 @@ class MapViewController: UIViewController, UITextFieldDelegate {
                                          coordinate: CLLocationCoordinate2D(latitude: Double(address.devices[i].longitude)!,
                                                                             longitude: Double(address.devices[i].latitude)!))
                     self.mapView.addAnnotation(bank)
+                    let stringDay = day.string(from: date)
+                    let APIHour = DateFormatter()
+                    APIHour.date(from: address.devices[i].tw[stringDay.lowercased()]!)
+                    print(APIHour)
+                    
                 }
             }
         }
@@ -54,7 +64,6 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 }
-
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
