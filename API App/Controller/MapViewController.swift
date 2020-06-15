@@ -15,6 +15,7 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     var address: Address?
     let annotationIdentifire = "annotationIdentifire"
     let reuseId = "pin"
+    var hoursArray = [String]()
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -52,7 +53,17 @@ class MapViewController: UIViewController, UITextFieldDelegate {
                     let stringDay = day.string(from: date)
                     let APIHour = DateFormatter()
                     APIHour.date(from: address.devices[i].tw[stringDay.lowercased()]!)
-                    print(APIHour)
+                    let arrayOfAPI = String(address.devices[i].tw[stringDay.lowercased()]!).split(separator: "-")
+                    self.hoursArray.append("\(arrayOfAPI[0])")
+                    self.hoursArray.append("\(arrayOfAPI[1])")
+                    self.hoursArray.append("\(hour.string(from: date))")
+                    
+                    for y in 0..<self.hoursArray.count {
+                        let unwanted: Set<Character> = [":", " "]
+                        self.hoursArray[y].removeAll(where: { unwanted.contains($0) })
+                    }
+                    print(self.hoursArray)
+                    
                     
                 }
             }
@@ -78,9 +89,16 @@ extension MapViewController: MKMapViewDelegate {
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
         pinView?.canShowCallout = true
-        pinView?.pinTintColor = .green
+        let openingTime = Int(self.hoursArray[0])!
+        let clousingTime = Int(self.hoursArray[1])!
+        let relevantTime = Int(self.hoursArray[2])!
+        switch relevantTime {
+        case openingTime...clousingTime:
+            pinView?.pinTintColor = .green
+        default:
+            pinView?.pinTintColor = .black
+        }
         annotationView = pinView
-        
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         imageView.layer.cornerRadius = 10
